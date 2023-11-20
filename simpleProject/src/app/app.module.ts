@@ -15,11 +15,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import {MatDividerModule} from '@angular/material/divider';
+import { MatDividerModule } from '@angular/material/divider';
+import { ContactComponent } from './contact/contact.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -27,9 +30,9 @@ import {MatDividerModule} from '@angular/material/divider';
     BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule, 
+    BrowserAnimationsModule,
     FormsModule,
-    MatButtonModule, 
+    MatButtonModule,
     MatToolbarModule,
     MatIconModule,
     MatBadgeModule,
@@ -39,7 +42,9 @@ import {MatDividerModule} from '@angular/material/divider';
     MatInputModule,
     MatSlideToggleModule,
     MatSidenavModule,
-    MatDividerModule
+    MatDividerModule,
+    FlexLayoutModule,
+  
   ],
   providers: [
     provideClientHydration()
