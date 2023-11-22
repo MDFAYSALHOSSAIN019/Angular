@@ -2,8 +2,27 @@
   "posts": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "firstName": "Faysal",
+      "lastName": "hossain",
+      "email": "mdfaysalhossain019@gmail.com",
+      "cell": "019851245852",
+      "salary": "25112"
+    },
+    {
+      "id": 2,
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "cell": "",
+      "salary": ""
+    },
+    {
+      "id": 3,
+      "firstName": "vcxvfg",
+      "lastName": "fgfd",
+      "email": "fdg",
+      "cell": "fg",
+      "salary": ""
     }
   ],
   "comments": [

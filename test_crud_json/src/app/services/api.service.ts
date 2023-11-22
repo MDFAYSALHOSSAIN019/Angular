@@ -7,11 +7,11 @@ import { map } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
- baseUrl : string ="  http://localhost:30000/";
+ baseUrl : string ="http://localhost:3000/posts";
 
   constructor(private http:HttpClient) { }
 
-  epmployeePost(data : any){
+epmployeePost(data : any){
 return this.http.post<any>(this.baseUrl,data)
 .pipe(map(res=>{return res;})
 )}

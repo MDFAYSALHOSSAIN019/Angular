@@ -27,7 +27,7 @@
                 <th>Action</th>
             </thead>
             <tbody>
-                <!-- <tr *ngFor="let row of employeeData"></tr> -->
+               
                 <tr *ngFor="let row of employeeData">
                     <td>{{row.id}}</td>
                     <td>{{row.firstName}}</td>
@@ -36,8 +36,8 @@
                     <td>{{row.cell}}</td>
                     <td>{{row.salary}}</td>
                     <td>
-                        <button class="btn btn-warning ms-1">Edit</button>
-                        <button class="btn btn-danger ms-1">Delete</button>
+                        <button class="btn btn-warning ms-1" style="color: green;">Edit</button>
+                        <button class="btn btn-danger ms-1" style="color: yellow;">Delete</button>
                     </td>
                 </tr>
             </tbody>
@@ -57,28 +57,28 @@
                 <div class="modal-body">
                     <form [formGroup]="formValue" >
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label" formControlName="firstName">First Name</label>
-                            <input type="text" class="form-control">
+                            <label for="exampleInputEmail1" class="form-label" >First Name</label>
+                            <input type="text" class="form-control" formControlName="firstName">
                         </div>
 
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label" formControlName="lastName">Last Name</label>
-                            <input type="text" class="form-control">
+                            <label for="exampleInputEmail1" class="form-label" >Last Name</label>
+                            <input type="text" class="form-control" formControlName="lastName">
                         </div>
 
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label" formControlName="email">Email</label>
-                            <input type="Email" class="form-control">
+                            <label for="exampleInputEmail1" class="form-label">Email</label>
+                            <input type="Email" class="form-control"  formControlName="email">
                         </div>
 
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label" formControlName="cell">cell</label>
-                            <input type="text" class="form-control">
+                            <label for="exampleInputEmail1" class="form-label" >cell</label>
+                            <input type="text" class="form-control" formControlName="cell">
                         </div>
 
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label" formControlNam="salary">Saslary</label>
-                            <input type="text" class="form-control">
+                            <label for="exampleInputEmail1" class="form-label" >Saslary</label>
+                            <input type="text" class="form-control" formControlName="salary">
                         </div>
 
 
@@ -86,7 +86,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-Success" (click)="">Save </button>
+                    <button type="button" class="btn btn-info" (click)="saveEmployee()">Save </button>
                     <button type="button" class="btn btn-primary">Edit </button>
                 </div>
             </div>
