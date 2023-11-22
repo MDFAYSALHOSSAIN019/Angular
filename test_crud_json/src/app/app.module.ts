@@ -5,7 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EmployeeComponent } from './employee/employee.component';
-
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule,provideHttpClient,withFetch } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,10 +15,16 @@ import { EmployeeComponent } from './employee/employee.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule
+  
   ],
   providers: [
-    provideClientHydration()
+    provideHttpClient(
+      withFetch()
+    )
   ],
   bootstrap: [AppComponent]
 })

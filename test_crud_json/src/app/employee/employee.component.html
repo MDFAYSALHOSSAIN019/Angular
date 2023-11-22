@@ -1,1 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav class="navber navber  bg-primary p-2">
+        <h4 class="text-light ">Test Crud</h4>
+        <div class="d-flex">
+            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Employee</button>
+        </div>
+    </nav>
+    <div class="container">
+
+        <table class="table table-striped  text-center ">
+            <thead>
+                <td>ID</td>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>email</td>
+                <td>phone</td>
+                <td>salary</td>
+                <th>Action</th>
+            </thead>
+            <tbody>
+                <!-- <tr *ngFor="let row of employeeData"></tr> -->
+                <tr *ngFor="let row of employeeData">
+                    <td>{{row.id}}</td>
+                    <td>{{row.firstName}}</td>
+                    <td>{{row.lastName}}</td>
+                    <td>{{row.email}}</td>
+                    <td>{{row.cell}}</td>
+                    <td>{{row.salary}}</td>
+                    <td>
+                        <button class="btn btn-warning ms-1">Edit</button>
+                        <button class="btn btn-danger ms-1">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- Button trigger modal -->
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Create a Profile</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="formValue" >
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label" formControlName="firstName">First Name</label>
+                            <input type="text" class="form-control">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label" formControlName="lastName">Last Name</label>
+                            <input type="text" class="form-control">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label" formControlName="email">Email</label>
+                            <input type="Email" class="form-control">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label" formControlName="cell">cell</label>
+                            <input type="text" class="form-control">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label" formControlNam="salary">Saslary</label>
+                            <input type="text" class="form-control">
+                        </div>
+
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-Success" (click)="">Save </button>
+                    <button type="button" class="btn btn-primary">Edit </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
