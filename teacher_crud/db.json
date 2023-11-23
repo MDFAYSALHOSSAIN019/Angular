@@ -1,0 +1,33 @@
+{
+  "posts": [
+    { "department":"fg",
+      "gender": "gfj",
+      "hobby": "hj",
+      "name": "dfad",
+      "id": 1
+    },
+    {
+      "gender": "hgjfgj",
+      "hobby": "hgjfgj",
+      "name": "df",
+      "id": 2
+    },
+    {
+      "gender": "dfsd",
+      "hobby": "gfsd",
+      "name": "sd",
+      "id": 3
+    }
+ 
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

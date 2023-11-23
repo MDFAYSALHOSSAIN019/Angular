@@ -1,0 +1,115 @@
+<nav class="navber navber-primary p-2">
+    <h2 class="text-success"> Teacher Profile</h2>
+    <div class="d-flex">
+        <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Teacher </button>
+    </div>
+</nav>
+
+<div class="container">
+    <table class="table table striped tsxt-center">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>DEPARTMENT</th>
+                <th>GENDER</th>
+                <th>HOBBY</th>
+                <th>ACTION</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of teacherData">
+                <td>{{row.id}}</td>
+                <td>{{row.name}}</td>
+                <td>{{row.department}}</td>
+                <td>{{row.gender}}</td>
+                <td>{{row.hobby}}</td>
+                <td>
+                    <button class="btn btn-warning mx-1">Edit</button>
+                    <button class="btn btn-danger mx-1">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<!--  -->
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Employee Form</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-body">
+                    <form [formGroup]="formValue">
+                        <div class="mb-3">
+                            <label class="form-label">Name</label>
+                            <input type="text" class="form-control" formControlName="name">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">department</label>
+                            <select class="form-select" aria-label="Default select example"
+                                formControlName="department">
+                                <option selected>Open this select menu</option>
+                                <option value="JEE">JEE</option>
+                                <option value="Python">Python</option>
+                                <option value="C#">C#</option>
+                            </select>
+
+                        </div>
+
+                        <label class="form-label">gender</label>
+                        <!-- Default radio -->
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                id="flexRadioDefault1" />
+                            <label class="form-check-label" for="flexRadioDefault1" formControlName="Male"> Male </label>
+                        </div>
+
+                        <!-- Default checked radio -->
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
+                                checked />
+                            <label class="form-check-label" for="flexRadioDefault2" formControlName="Female">Female</label>
+                        </div>
+
+
+                        <label class="form-label">Hobby</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="gardening">
+                            <label class="form-check-label" for="flexCheckDefault" >
+                                gardening
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" formControlName="Fishing">
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Fishing
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" formControlName="cycling">
+                            <label class="form-check-label" for="flexCheckChecked">
+                                cycling
+                            </label>
+                        </div>
+
+
+
+
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success" (click)="saveTeacher()">Save</button>
+                    <button type="button" class="btn btn-primary" (click)="teacherEdit()">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
