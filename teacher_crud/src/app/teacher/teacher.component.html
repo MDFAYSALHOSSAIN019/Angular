@@ -1,4 +1,4 @@
-<nav class="navber navber-primary p-2">
+<!-- <nav class="navber navber-primary p-2">
     <h2 class="text-success"> Teacher Profile</h2>
     <div class="d-flex">
         <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Teacher </button>
@@ -25,18 +25,18 @@
                 <td>{{row.gender}}</td>
                 <td>{{row.hobby}}</td>
                 <td>
-                    <button class="btn btn-warning mx-1">Edit</button>
-                    <button class="btn btn-danger mx-1">Delete</button>
+                    <button class="btn btn-warning mx-1" (click)="onEdit(row)" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
+                    <button class="btn btn-danger mx-1"(click)="deleteTeacher(row)" >Delete</button>
                 </td>
             </tr>
         </tbody>
     </table>
-</div>
+</div> -->
 
 
 <!--  -->
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -64,18 +64,17 @@
                         </div>
 
                         <label class="form-label">gender</label>
-                        <!-- Default radio -->
-                        <div class="form-check">
+                            <div class="form-check">
                             <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                id="flexRadioDefault1" />
-                            <label class="form-check-label" for="flexRadioDefault1" formControlName="Male"> Male </label>
+                                id="flexRadioDefault1"  formControlName="Male"/>
+                            <label class="form-check-label" for="flexRadioDefault1" > Male </label>
                         </div>
 
-                        <!-- Default checked radio -->
+                       
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
-                                checked />
-                            <label class="form-check-label" for="flexRadioDefault2" formControlName="Female">Female</label>
+                          formControlName="Female"       />
+                            <label class="form-check-label" for="flexRadioDefault2" >Female</label>
                         </div>
 
 
@@ -98,11 +97,6 @@
                                 cycling
                             </label>
                         </div>
-
-
-
-
-
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -112,4 +106,18 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
+    <mat-toolbar>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span>My App</span>
+        <span class="example-spacer"></span>
+        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+          <mat-icon>favorite</mat-icon>
+        </button>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+          <mat-icon>share</mat-icon>
+        </button>
+      </mat-toolbar>
+      

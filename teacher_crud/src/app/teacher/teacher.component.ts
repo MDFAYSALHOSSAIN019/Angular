@@ -5,7 +5,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-teacher',
   templateUrl: './teacher.component.html',
-  styleUrl: './teacher.component.css'
+  styleUrl: './teacher.component.css',
+  standalone: true,
 })
 export class TeacherComponent implements OnInit {
 
@@ -14,6 +15,7 @@ export class TeacherComponent implements OnInit {
   formValue !: FormGroup;
   
   teacherData: any;
+
   constructor(private api_tea: TeacherApiService, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
@@ -26,11 +28,9 @@ export class TeacherComponent implements OnInit {
       cycling: [false],
     });
     this.getAll();
-
   }
 
   saveTeacher() {
-
     this.teacherModel.name = this.formValue.value.name;
     this.teacherModel.department = this.formValue.value.deartment;
     this.teacherModel.gender = this.formValue.value.gender;
@@ -52,6 +52,20 @@ export class TeacherComponent implements OnInit {
       .subscribe(res => {
         this.teacherData = res;
       })
+  }
+
+  deleteTeacher(row :any){
+    this.api_tea.deleteTeacher(row.id)
+    .subscribe(res => {
+      console.log(res);
+      alert("Teacher Delete in Json")
+      this.formValue.reset();
+      this.getAll();
+    },
+      err => {
+        alert("Data are not delete")
+      })
+
   }
 
   onEdit(row: any) {

@@ -1,32 +1,17 @@
 {
   "posts": [
-    { "department":"fg",
-      "gender": "gfj",
-      "hobby": "hj",
-      "name": "dfad",
+    {
+      "gender": null,
+      "name": "faysal",
       "id": 1
     },
     {
-      "gender": "hgjfgj",
-      "hobby": "hgjfgj",
-      "name": "df",
+      "gender": "",
+      "name": "y87",
       "id": 2
-    },
-    {
-      "gender": "dfsd",
-      "hobby": "gfsd",
-      "name": "sd",
-      "id": 3
-    }
- 
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
     }
   ],
+  "comments": [],
   "profile": {
     "name": "typicode"
   }
