@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { Form, FormBuilder, FormGroup } from '@angular/forms';
+import { EmployeeService } from '../service/employee.service';
+import { DialogRef } from '@angular/cdk/dialog';
 
 @Component({
   selector: 'app-employee',
@@ -14,10 +16,16 @@ export class EmployeeComponent {
     'JEE',
     'html',
     'angular',
-    'bootstrap',
-    
+    'bootstrap',    
   ]
-  constructor(private _fb : FormBuilder){
+  // ngOnInit(): void {
+  //   this.get();
+  // }
+
+  constructor(private _fb : FormBuilder,
+     private _empService :EmployeeService, 
+     private dialog :DialogRef <EmployeeComponent>){
+
     this.EmpFrom =this._fb.group({
       firstName:'',
       lastName:'',
@@ -28,4 +36,23 @@ export class EmployeeComponent {
 
     })
   }
+  onFromSubmit(){
+    if(this.EmpFrom.valid){
+      this._empService.empPost(this.EmpFrom.value).subscribe({
+          next:(val :any)=>{
+          alert('emp are add in json');
+          this.dialog.close();
+          },
+          error:(err : any)=>{
+            console.error(err);
+          },
+
+      })
+    }
+  }
+
+
+
+
+
 }

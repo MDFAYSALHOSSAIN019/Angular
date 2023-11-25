@@ -1,26 +1,30 @@
-<div mat-dialog-title>
+
+  <div mat-dialog-title>
     <h1>Employee Form</h1>
 </div>
+
+<form action="" [formGroup]="EmpFrom" (ngSubmit)="onFromSubmit()">
+
 <div mat-dialog-content>
  <div class="row">
     <mat-form-field appearance="outline" class="col-md-5">
         <mat-label>First Name</mat-label>
-        <input matInput placeholder="First Name" type="text">
+        <input matInput placeholder="First Name" type="text" formControlName="firstName">
       </mat-form-field>
       <mat-form-field appearance="outline" class="col-md-5">
         <mat-label>Last Name</mat-label>
-        <input matInput placeholder="Last Name" type="text">
+        <input matInput placeholder="Last Name" type="text" formControlName="lastName">
       </mat-form-field>
  </div>
  <div class="row">
     <mat-form-field appearance="outline" class="col-md-5">
         <mat-label>Email</mat-label> 
-        <input matInput placeholder="Email" type="Email">
+        <input matInput placeholder="Email" type="Email" formControlName="email">
       </mat-form-field>
 
       <mat-form-field appearance="outline" class="col-md-5">
         <mat-label>Date Of Birth</mat-label>
-        <input matInput [matDatepicker]="picker">
+        <input matInput [matDatepicker]="picker" formControlName="dob">
         <mat-hint>MM/DD/YYYY</mat-hint>
         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
@@ -31,15 +35,15 @@
       </mat-form-field> -->
  </div>
  <div class="row" >
-    <mat-radio-group aria-label="Select an option" appearance="outline" >
+    <mat-radio-group aria-label="Select an option" appearance="outline" formControlName="gender" >
         <mat-label> Select Gender</mat-label>
         <mat-radio-button value="Male">Male</mat-radio-button><mat-radio-button value="Female">Female</mat-radio-button>
       </mat-radio-group>
 
       <h4>subject</h4>
 <mat-form-field appearance="outline" >
-  <mat-label>Subject</mat-label>
-  <mat-select matNativeControl required>
+  <mat-label>Choce One</mat-label>
+  <mat-select matNativeControl required formControlName="subject"> 
     <mat-option *ngFor="let val of subject" [value]="val" >{{val}}</mat-option>
 
   </mat-select>
@@ -60,7 +64,9 @@
 
 </div>
 <div mat-dialog-actions class="action">
-    <button mat-raised-button color="primary">Cancel</button>
-    <button mat-raised-button color="primary">save</button>
-
+    <button mat-raised-button color="primary"> Cancel </button>
+    <button mat-raised-button color="primary" type="submit" >save</button>
+    <button mat-raised-button color="primary" type="reset">Reset</button>
+    
 </div>
+</form>
