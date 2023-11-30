@@ -15,7 +15,7 @@ export class EmployeeService  {
 return this._http.post<any>(this.baseUrl,data).pipe(map(res =>{return res;}))
 
   }
-  getAllEmp(){
+  getAllEmpList(){
     return this._http.get<any>(this.baseUrl).pipe(map(res =>{return res;}))
   }
   deleteEmp(id : number){
