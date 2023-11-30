@@ -1,0 +1,46 @@
+
+<mat-toolbar color="primary">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>My App</span>
+  <span class="example-spacer"></span>
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <mat-icon>share</mat-icon>
+  </button>
+</mat-toolbar>
+
+<div class="container bg-primary">
+
+  <p>You have received a file called "cat-picture.jpeg".</p>
+
+<button mat-raised-button (click)="openBottomSheet()">Open file</button>
+<mat-nav-list>
+  <a href="https://keep.google.com/" mat-list-item (click)="openLink($event)">
+    <span matListItemTitle>Google Keep</span>
+    <span matLine>Add to a note</span>
+  </a>
+
+  <a href="https://docs.google.com/" mat-list-item (click)="openLink($event)">
+    <span matListItemTitle>Google Docs</span>
+    <span matLine>Embed in a document</span>
+  </a>
+
+  <a href="https://plus.google.com/" mat-list-item (click)="openLink($event)">
+    <span matListItemTitle>Google Plus</span>
+    <span matLine>Share with your friends</span>
+  </a>
+
+  <a href="https://hangouts.google.com/" mat-list-item (click)="openLink($event)">
+    <span matListItemTitle>Google Hangouts</span>
+    <span matLine>Show to your coworkers</span>
+  </a>
+</mat-nav-list>
+</div>
+
+
+
+<router-outlet></router-outlet>
