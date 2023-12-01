@@ -5,10 +5,10 @@ import { Cart } from './model/cart.model';
 import { CheckoutComponent } from './store/checkout.component';
 
 const routes: Routes = [
-{path :"store", component:StoreComponent},
-{path : "cart", component : Cart},
-{path : "checkout", component : CheckoutComponent},
-{path :"*", redirectTo :"/store"}
+// {path :"store", component:StoreComponent},
+// {path : "cart", component : Cart},
+// {path : "checkout", component : CheckoutComponent},
+// {path :"*", redirectTo :"/store"}
   
 ];
 
