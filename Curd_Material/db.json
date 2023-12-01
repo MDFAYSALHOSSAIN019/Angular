@@ -4,6 +4,24 @@
       "id": 1,
       "title": "json-server",
       "author": "typicode"
+    },
+    {
+      "firstName": "faysal",
+      "lastName": "hossain",
+      "email": "gds@gmail.com",
+      "dob": "2023-11-04T18:00:00.000Z",
+      "gender": "Male",
+      "Subject": "",
+      "id": 2
+    },
+    {
+      "firstName": "robiul",
+      "lastName": "islam",
+      "email": "faysalhossain019@gmail.com",
+      "dob": "2023-11-05T18:00:00.000Z",
+      "gender": "Male",
+      "Subject": "",
+      "id": 3
     }
   ],
   "comments": [
