@@ -1,6 +1,4 @@
-import {
-    Directive, ViewContainerRef, TemplateRef, Input, SimpleChanges
-   } from "@angular/core";
+import {Directive, ViewContainerRef, TemplateRef, Input, SimpleChanges} from "@angular/core";
    @Directive({
     selector: "[counterOf]"
    })
