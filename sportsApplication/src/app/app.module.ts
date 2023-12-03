@@ -56,7 +56,7 @@ import { StoreFirstGuard } from "./storeFirst.guard";
         .then(m => m.AdminModule),
         canActivate: [StoreFirstGuard]
         },
-      { path: "**", redirectTo: "/store" }
+      { path: "**", redirectTo: "/store" },
       
     ])],
 
