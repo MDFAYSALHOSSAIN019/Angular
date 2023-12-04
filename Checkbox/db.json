@@ -47,6 +47,15 @@
         "Fishing",
         "Sleeping"
       ]
+    },
+    {
+      "id": 41,
+      "firstName": "tye",
+      "lastName": "ryt",
+      "gender": "Male",
+      "hobby": [
+        "Reading"
+      ]
     }
   ]
 }
