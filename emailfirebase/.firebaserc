@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "emailfirebase-fdb85": {
+      "hosting": {
+        "emailfirebase": [
+          "emailfirebase-fdb85"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "emailfirebase-fdb85"
+  }
+}
