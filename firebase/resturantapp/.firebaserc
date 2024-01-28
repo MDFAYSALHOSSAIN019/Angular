@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "resturant-5c83c": {
+      "hosting": {
+        "resturantapp": [
+          "resturant-5c83c"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "resturant-5c83c"
+  }
+}
