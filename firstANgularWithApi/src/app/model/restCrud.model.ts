@@ -2,6 +2,13 @@ export class CrudApi{
 
     id?: number;
     name?: string;
-    depaetment?: string;
+    gender?: string;
+
+}
+
+export class ApiResponse<T>{
+ 
+    massage?:string;
+    data? :T;
 
 }

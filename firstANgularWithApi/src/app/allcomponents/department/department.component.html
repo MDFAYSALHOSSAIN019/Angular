@@ -20,24 +20,76 @@
             <thead>
                 <td>ID</td>
                 <td>Name</td>
-                <td>DepartmentName</td>
+                <td>Gender</td>
+
                 <!-- <td>email</td>
                 <td>phone</td>
-                <td>salary</td>
-                <th>Action</th> -->
+                <td>salary</td> -->
+                <th>Action</th>
+
             </thead>
             <tbody>
-               
-                <tr *ngFor="let row to  crudData">
-                    <td>{{row.id}}</td>
-                    <td>{{row.name}}</td>
-                    <td>{{row.depaetment}}</td>
-                 
+               @for (item of  crudData; track $index) {
+                <tr >
+                    <td>{{item.id}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.gender}}</td>                 
                     <td>
-                        <button class="btn btn-warning ms-1" style="color: green;">Edit</button>
-                        <button class="btn btn-danger ms-1" style="color: yellow;">Delete</button>
+                        <button class="btn btn-warning ms-1" style="color: green;" (click)="openEditModal(item)">Edit</button>
+                        <button class="btn btn-danger ms-1" style="color: yellow;" (click)="deleteAndReload(item.id)">Delete</button>
                     </td>
                 </tr>
+            }
             </tbody>
         </table>
     </div>
+
+
+
+
+
+    <!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button> -->
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Employee Add Form</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+         <form [formGroup]="formValue" class="w-full" autocomplete="off" novalidate >
+
+<div class="mb-5">
+    <label for="name" class="black mb-2 text-sm font-medium text-gray-9000 dark:text-white">Name</label>
+    <input type="text" id="name" class="form-control" placeholder="name" formControlName="name">
+    @if(formValue.get('name')?.hasError('requried') && formValue.get('name')?.touched){
+        <div class="form-error">name is Requried</div>
+    }
+
+</div>
+
+<div class="mb-5">
+    <label for="name" class="black mb-2 text-sm font-medium text-gray-9000 dark:text-white">Gender</label>
+    <input type="text" id="name" class="form-control" placeholder="name" formControlName="gender">
+    @if(formValue.get('name')?.hasError('requried') && formValue.get('name')?.touched){
+        <div class="form-error">name is Requried</div>
+    }
+    
+</div>
+
+
+
+         </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="ngOnInit()">Close</button>
+          <button type="button" class="btn btn-primary" (click)="saveAndReload()" data-bs-dismiss="modal" (click)="ngOnInit()">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
