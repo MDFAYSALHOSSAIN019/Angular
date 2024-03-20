@@ -25,13 +25,10 @@ ngOnInit(): void {
     hobby_reading: [false],
     hobby_gaming:[false],
     hobby_fishing:[false],
-    hobby_sleeping:[false],
-
+    hobby_sleeping:[false]
   })
   this.getAll();
 }
-
-
 save(): void {
 
   //his.setStudentModelFromForm();
@@ -67,11 +64,8 @@ save(): void {
       }
     );
 }
-
-
   saveStudent(): void {
     this.setStudentModelFromForm();
-
     this.api.studentPost(this.studentModel)
       .subscribe(
         res => {
@@ -106,7 +100,6 @@ save(): void {
     hobbies.push('Sleeping')
   }
   this.studentModel.hobby = hobbies;
-
   }
 
   getAll(): void {
